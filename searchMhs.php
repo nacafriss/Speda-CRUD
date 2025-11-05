@@ -8,8 +8,8 @@ if (isset($_GET['cari'])) {
     $cari = trim($_GET['cari']);
     $cari = mysqli_real_escape_string($koneksi, $cari);
     if ($cari === "") {
-        $error = "Kata kunci tidak boleh kosong.";
-        $result = false;
+       header ("location: index.php");
+        $result = true;
     } else {
         $sql = "SELECT * FROM mahasiswa 
                 WHERE nama LIKE '%$cari%'";
